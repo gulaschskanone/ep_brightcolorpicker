@@ -1,0 +1,67 @@
+.brightColorPicker-colorPanel {
+    display: none;
+    float: left;
+    position: relative;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.699219);
+    padding: 5px;
+    border-radius: 6px;
+}
+.brightColorPicker-colorPalette {
+    width: 200px;
+    height: 120px;
+}
+.brightColorPicker-colorPalette .brightColorPicker-colorChoice:first-child {
+    border-top-left-radius: 3px;
+}
+.brightColorPicker-colorPalette .brightColorPicker-colorChoice:nth-child(8) {
+    border-top-right-radius: 3px;
+}
+.brightColorPicker-colorPalette .brightColorPicker-colorChoice:nth-child(33) {
+    border-bottom-left-radius: 3px;
+}
+.brightColorPicker-colorPalette .brightColorPicker-colorChoice:last-child {
+    border-bottom-right-radius: 3px;
+}
+.brightColorPicker-chosenColor {
+    clear: left;
+    margin-top: 5px;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+	display: inline-block;
+}
+.brightColorPicker-colorChoice {
+    cursor: crosshair;
+    font-size: 0.5em;
+    height: 24px;
+    width: 24px;
+    float: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.699219);
+    border-right: 1px solid rgba(0, 0, 0, 0.699219); 
+}
+.brightColorPicker-newLine {
+    clear: both;
+}
+a.brightColorPicker-saveButton {
+	font-weight: bold;
+}
+a.brightColorPicker-cancelButton, a.brightColorPicker-saveButton {
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #ccc);
+	background: -ms-linear-gradient(#fff, #ccc);
+	background: -o-linear-gradient(#fff, #ccc);
+	background: -webkit-linear-gradient(#fff, #ccc);
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size:12px; 
+	cursor: pointer; 
+	color:#000; 
+	overflow: hidden; 
+	padding: 4px; 
+	text-align:center;
+	margin: 5px 0px 0px 5px;
+	width: 60px; 
+	float: right;
+	z-index: 101;
+}

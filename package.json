@@ -1,0 +1,15 @@
+{
+  "name": "ep_brightcolorpicker",
+  "description": "Replace farbtastic color picker with brightcolorpicker",
+  "version": "0.0.1",
+  "author": {
+    "name": "Christoph Becker",
+    "email": "christoph.becker@uni-passau.de"
+  },
+  "contributors": [],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gulaschskanone/ep_brightcolorpicker.git"
+  }
+}

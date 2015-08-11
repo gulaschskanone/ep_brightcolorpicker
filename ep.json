@@ -1,0 +1,14 @@
+{
+  "parts":[
+    {
+      "name": "brightcolorpicker",
+      "hooks": {
+          "eejsBlock_scripts": "ep_brightcolorpicker/index",
+          "eejsBlock_styles": "ep_brightcolorpicker/index"
+      },
+      "client_hooks": {
+        "postAceInit": "ep_brightcolorpicker/static/js/main:postAceInit"
+      }
+    }
+  ]
+}
