@@ -1,7 +1,7 @@
 {
   "name": "ep_brightcolorpicker",
   "description": "Replaces farbtastic color picker with brightcolorpicker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Christoph Becker",
     "email": "christoph.becker@uni-passau.de"
