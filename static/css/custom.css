@@ -1,0 +1,52 @@
+#colorpicker {
+  position: absolute;
+  left: -225px; top: 5px;
+}
+
+
+.brightColorPicker-colorChoice {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.699219);
+    font-size: 18px; 
+}
+
+
+.brightColorPicker-colorChoice:hover:after {
+	content: '\2714';
+	color: #000;
+    padding-left: 5px;
+}
+	
+.brightColorPicker-colorChoice.selected:after {
+	content: '\2714';
+	padding-left: 5px;
+	color: #999;
+}
+
+.brightColorPicker-colorPalette, .brightColorPicker-colorPanel {
+    width: 208px;
+}
+
+.brightColorPicker-chosenColor, a.brightColorPicker-closeDialog {
+	display:none !important;
+}
+
+a.brightColorPicker-cancelButton {
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #ccc);
+	background: -ms-linear-gradient(#fff, #ccc);
+	background: -o-linear-gradient(#fff, #ccc);
+	background: -webkit-linear-gradient(#fff, #ccc);
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size:12px; 
+	cursor: pointer; 
+	color:#000; 
+	overflow: hidden; 
+	padding: 4px; 
+	text-align:center;
+	margin: 5px 0px 0px 5px;
+	width: 60px; 
+	float: right;
+	z-index: 101;
+}

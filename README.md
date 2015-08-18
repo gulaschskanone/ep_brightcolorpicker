@@ -7,8 +7,10 @@ Etherpad-Plugin that replace the farbtastic color picker with [jQuery Bright Col
 * tested with EPL 1.5.7
 
 
-# Proposed improvements #
-Lets make
-* brightness level 
-* color range and amount
-configurable.
+# brightness level (settings.json) #
+```
+"ep_brightcolorpicker" : {
+  "brightness" : 0.25                   // default; fix level (0.1 .. 0.5)
+  // "brightness" : [_min_, _max_]	    // random level between min and max (0.1 .. 0.5)
+}
+```

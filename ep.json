@@ -4,7 +4,8 @@
       "name": "brightcolorpicker",
       "hooks": {
           "eejsBlock_scripts": "ep_brightcolorpicker/index",
-          "eejsBlock_styles": "ep_brightcolorpicker/index"
+          "eejsBlock_styles": "ep_brightcolorpicker/index",
+          "clientVars": "ep_brightcolorpicker/index:clientVars"
       },
       "client_hooks": {
         "postAceInit": "ep_brightcolorpicker/static/js/main:postAceInit"

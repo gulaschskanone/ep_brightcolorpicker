@@ -1,6 +1,6 @@
 {
   "name": "ep_brightcolorpicker",
-  "description": "Replace farbtastic color picker with brightcolorpicker",
+  "description": "Replaces farbtastic color picker with brightcolorpicker",
   "version": "0.0.1",
   "author": {
     "name": "Christoph Becker",

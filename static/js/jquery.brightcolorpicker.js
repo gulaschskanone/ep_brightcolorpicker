@@ -4,11 +4,7 @@
  * Released into the public domain
  * Date: 11th Dec 2011
  * @author Burke Mamlin
- * @version 1.1
- *
- * Release notes
- * 1.0 - initial release
- * 1.1 - adapted UI to better fit in Etherpad Lite
+ * @version 1.0
  */
 
 (function($) {
@@ -103,33 +99,27 @@
                 var $this = $(this),
                     callback = (typeof options == 'function' ? options : options.callback);
 
-                var settings = $.extend({ 'brightness': 0.30 }, options);
+                var settings = $.extend({ 'brightness': 0.20 }, options);
 
                 var panel = $("<div class='brightColorPicker-colorPanel'></div>");
                 panel.data('brightColorPicker', { 'callback' : callback });
+                var closer = $("<a class='brightColorPicker-closeDialog' title='Close'></a>");
+                closer.click(function(event) {
+                    $(event.target).parents('.brightColorPicker-colorPanel').hide();
+                });
+                panel.append(closer);
                 var palette = $("<div class='brightColorPicker-colorPalette'></div>");
                 panel.append(palette);
                 panel.append("<div class='brightColorPicker-chosenColor'></div>");
-                var saveButton = $("<a class='brightColorPicker-saveButton' title='Save'>Save</a>");
-                saveButton.click(function(event) {
-                    $(event.target).parents('.brightColorPicker-colorPanel').hide();
-                    selectColor(event);
-                });
-                // panel.append(saveButton);
-                var cancelButton = $("<a class='brightColorPicker-cancelButton'>Cancel</a>");
-                cancelButton.click(function(event) {
-                    $(event.target).parents('.brightColorPicker-colorPanel').hide();
-                });
-                panel.append(cancelButton);
                 $this.append(panel);
 
                 var i;
-                for (i = 0; i < 80; i = i+2)
+                for (i = 0; i < 40; i++)
                 {
-                    var rgb = hsvToRgb(i * 4.5, settings.brightness, 0.95);
+                    var rgb = hsvToRgb(i * 8, settings.brightness, 1);
                     var div = $("<div></div>").addClass('brightColorPicker-colorChoice')
                         .css('background-color', rgb).hover(updateColor).click(selectColor);
-                    if (i > 0 && i % 16 === 0) 
+                    if (i > 0 && i % 8 === 0) 
                     {
                         div.addClass('newLine');
                     }
