@@ -9,7 +9,7 @@ exports.postAceInit = function (hook_name, args, cb) {
    	    	// range
    	        var min = Math.min(clientVars.brightness[0], clientVars.brightness[1]);
    	        var max = Math.max(clientVars.brightness[0], clientVars.brightness[1]); 
-   	       	brightness = Math.random() * (max - min) + min;   			
+   	       	brightness = Math.floor((Math.random() * (max - min) + min) * 100) / 100;
    		}
    		else if(typeof clientVars.brightness === 'number' 
    			&& between(clientVars.brightness,0.1,0.5)){
@@ -57,6 +57,12 @@ exports.postAceInit = function (hook_name, args, cb) {
 	/**
 	 * check chosen
 	 */
+	// remind color selection
+	$(".brightColorPicker-colorPalette > div").filter(function(){
+	    return $(this).css('background-color') === pad.myUserInfo.colorId;
+	}).addClass('selected');
+	
+	// change on click
 	$('.brightColorPicker-colorChoice').click( function (e){
 		// remove "selected" classes
 		$(".brightColorPicker-colorPalette > div").removeClass('selected');
@@ -64,6 +70,7 @@ exports.postAceInit = function (hook_name, args, cb) {
 		// add "selected" class
 		$(this).addClass('selected');
 	});
+	
 	
 	
 	/**
