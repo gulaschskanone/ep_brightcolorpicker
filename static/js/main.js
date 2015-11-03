@@ -1,26 +1,7 @@
 var $ = require('ep_etherpad-lite/static/js/rjquery').$; // use jQuery
 
 exports.postAceInit = function (hook_name, args, cb) {
-	var brightness;
-   	if (clientVars.brightness){
-   		if(typeof clientVars.brightness === 'object' 
-   			&& between(clientVars.brightness[0],0.1,0.5)
-   			&& between(clientVars.brightness[1],0.1,0.5)){
-   	    	// range
-   	        var min = Math.min(clientVars.brightness[0], clientVars.brightness[1]);
-   	        var max = Math.max(clientVars.brightness[0], clientVars.brightness[1]); 
-   	       	brightness = Math.floor((Math.random() * (max - min) + min) * 100) / 100;
-   		}
-   		else if(typeof clientVars.brightness === 'number' 
-   			&& between(clientVars.brightness,0.1,0.5)){
-   			// real number between [MAX|MIN]_BRIGHTNESS
-   			brightness = clientVars.brightness;
-   		}
-   		else {
-   			brightness = 0.25; // default
-   		}
-   	}
-   	
+	var brightness = clientVars.brightness;
 	
 	/**
 	 * remove farbtastic
@@ -38,11 +19,26 @@ exports.postAceInit = function (hook_name, args, cb) {
 	$('#colorpicker').brightColorPicker({
 		'brightness' : brightness,
 		'callback' : function (color) {
-			pad.myUserInfo.colorId = color;
-			pad.notifyChangeColor(color);
-			// paduserlist.renderMyUserInfo(); // doesn't work
-			// dirty: copied rows from paduserlist.renderMyUserInfo()
-			// TODO: run paduserlist.renderMyUserInfo()
+			
+			// copied from pad_userlist.js
+			var newColor = color;
+		    var parts = newColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+		    // parts now should be ["rgb(0, 70, 255", "0", "70", "255"]
+		    if (parts) {
+		      delete (parts[0]);
+		      for (var i = 1; i <= 3; ++i) {
+		          parts[i] = parseInt(parts[i]).toString(16);
+		          if (parts[i].length == 1) parts[i] = '0' + parts[i];
+		      }
+		      var newColor = "#" +parts.join(''); // "0070ff"
+		    }
+		    
+			pad.notifyChangeColor(newColor);
+	        pad.myUserInfo.globalUserColor = newColor;
+	        
+			// paduserlist.renderMyUserInfo();
+			// doesn't work
+			// dirty: copied from paduserlist.renderMyUserInfo()
 			$("#myswatch").css({'background-color': color});
 			if (browser.msie && parseInt(browser.version) <= 8) {
 				$("li[data-key=showusers] > a").css({'box-shadow': 'inset 0 0 30px ' + color,'background-color': color});

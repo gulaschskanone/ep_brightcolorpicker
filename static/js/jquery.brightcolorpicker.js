@@ -99,7 +99,7 @@
                 var $this = $(this),
                     callback = (typeof options == 'function' ? options : options.callback);
 
-                var settings = $.extend({ 'brightness': 0.20 }, options);
+                var settings = $.extend({ 'brightness':0.2}, options);
 
                 var panel = $("<div class='brightColorPicker-colorPanel'></div>");
                 panel.data('brightColorPicker', { 'callback' : callback });
@@ -112,19 +112,34 @@
                 panel.append(palette);
                 panel.append("<div class='brightColorPicker-chosenColor'></div>");
                 $this.append(panel);
-
+                
+                var columns = clientVars.columns;               
+                var amount = columns*5;
                 var i;
-                for (i = 0; i < 40; i++)
+                for (i = 0; i < amount; i++)
                 {
-                    var rgb = hsvToRgb(i * 8, settings.brightness, 1);
+                    var rgb = hsvToRgb(i * (360/amount), clientVars.brightness, 1);
                     var div = $("<div></div>").addClass('brightColorPicker-colorChoice')
                         .css('background-color', rgb).hover(updateColor).click(selectColor);
-                    if (i > 0 && i % 8 === 0) 
+                    if (i > 0 && i % columns === 0) 
                     {
                         div.addClass('newLine');
                     }
                     palette.append(div);
                 }
+                
+                // panel width
+                $(".brightColorPicker-colorPalette, .brightColorPicker-colorPanel").css("width", columns*26+"px");
+                
+                // picker left offset
+                $("#colorpicker").css("left", "-"+(20+columns*26)+"px");
+                
+                // border-radius
+                $(".brightColorPicker-colorPalette .brightColorPicker-colorChoice:nth-child("+columns+")")
+                	.css("border-top-right-radius", "3px");
+                $(".brightColorPicker-colorPalette .brightColorPicker-colorChoice:nth-child("+(columns*(columns-1)+1)+")")
+            		.css("border-bottom-left-radius", "3px");
+                
             });
 
         },

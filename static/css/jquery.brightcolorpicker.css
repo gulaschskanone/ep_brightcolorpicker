@@ -15,12 +15,7 @@
 .brightColorPicker-colorPalette .brightColorPicker-colorChoice:first-child {
     border-top-left-radius: 3px;
 }
-.brightColorPicker-colorPalette .brightColorPicker-colorChoice:nth-child(8) {
-    border-top-right-radius: 3px;
-}
-.brightColorPicker-colorPalette .brightColorPicker-colorChoice:nth-child(33) {
-    border-bottom-left-radius: 3px;
-}
+
 .brightColorPicker-colorPalette .brightColorPicker-colorChoice:last-child {
     border-bottom-right-radius: 3px;
 }

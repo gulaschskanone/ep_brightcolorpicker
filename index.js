@@ -15,9 +15,17 @@ exports.clientVars = function(hook, context, callback)
 {
 	// return the setting to the clientVars, sending the value
 	if(settings.ep_brightcolorpicker){
-		return callback({ "brightness": settings.ep_brightcolorpicker.brightness });
+		return callback({
+			"brightness": settings.ep_brightcolorpicker.brightness || 0.25,
+			"columns": settings.ep_brightcolorpicker.columns || 6 
+		});
 	}
-	else {
-		return callback({ "brightness": false });
+	else{
+		return callback({
+			"brightness": 0.25,
+			"columns": 6 
+		});
 	}
+
+	
 };
