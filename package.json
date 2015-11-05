@@ -1,6 +1,6 @@
 {
   "name": "ep_brightcolorpicker",
-  "description": "Replaces farbtastic color picker with brightcolorpicker",
+  "description": "Replaces the build-in farbtastic color picker with jquery brightcolorpicker",
   "version": "0.0.5",
   "author": {
     "name": "Christoph Becker",
@@ -12,15 +12,5 @@
     "type": "git",
     "url": "https://github.com/gulaschskanone/ep_brightcolorpicker.git"
   },
-  "readme": "ep_brightcolorpicker\r\n=======\r\n\r\nEtherpad-Plugin that replaces the farbtastic color picker with [jQuery Bright Color Picker Plugin](https://github.com/bmamlin/brightcolorpicker-jquery-plugin) as proposed in [issue #151](https://github.com/ether/etherpad-lite/issues/151).\r\n\r\n* small amount of 40 quite bright selectable user colors (better readable)\r\n* tested with EPL 1.5.7\r\n\r\n![view ep_brightcolorpicker in action](https://raw.githubusercontent.com/gulaschskanone/ep_brightcolorpicker/master/static/image/ep_brightcolorpicker.png)\r\n\r\n\r\n## brightness level (settings.json) ##\r\n```\r\n\"ep_brightcolorpicker\" : {\r\n  \"brightness\" : 0.25                   // default; fix level (0.1 .. 0.5)\r\n  // \"brightness\" : [_min_, _max_]\t    // random level between min and max (0.1 .. 0.5)\r\n}\r\n```",
-  "readmeFilename": "README.md",
-  "gitHead": "a6d34234ab7063ca4d9b3eece8948f3be8a766ab",
-  "bugs": {
-    "url": "https://github.com/gulaschskanone/ep_brightcolorpicker/issues"
-  },
-  "homepage": "https://github.com/gulaschskanone/ep_brightcolorpicker",
-  "_id": "ep_brightcolorpicker@0.0.3",
-  "scripts": {},
-  "_shasum": "8d3be325524129506e139eef46425f6edaf5636d",
-  "_from": "ep_brightcolorpicker@*"
+  "license" : "SEE LICENSE IN 'LICENSE'"
 }

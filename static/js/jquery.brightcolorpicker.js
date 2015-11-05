@@ -5,6 +5,8 @@
  * Date: 11th Dec 2011
  * @author Burke Mamlin
  * @version 1.0
+ * 
+ * modded for ep_brightcolorpicker
  */
 
 (function($) {
