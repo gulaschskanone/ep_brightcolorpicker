@@ -80,19 +80,14 @@ exports.postAceInit = function (hook_name, args, cb) {
 	/**
 	 * add cancel button
 	 */
-	var cancelButton = $("<a class='brightColorPicker-cancelButton' data-l10n-id='ep_brightcolorpicker.cancel'>Cancel</a>");
+	var cancelButton = $("<a class='brightColorPicker-cancelButton'>X</a>");
     cancelButton.click(function() {
     	$('#colorpicker').brightColorPicker('hide');
     });
     $(".brightColorPicker-colorPanel").append(cancelButton);
 
     
-    /**
-     *  helper
-     */
-    function between(x, min, max) {
-    	  return x >= min && x <= max;
-	}
+
 	
 };
 

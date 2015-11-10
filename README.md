@@ -9,10 +9,10 @@ Etherpad-Plugin that replaces the build-in farbtastic color picker with [jQuery 
 ![view ep_brightcolorpicker in action](https://raw.githubusercontent.com/gulaschskanone/ep_brightcolorpicker/master/static/image/ep_brightcolorpicker.png)
 
 
-## brightness level (settings.json) ##
+## customizing (settings.json) ##
 ```
 "ep_brightcolorpicker" : {
-  "brightness" : 0.25           // default; brightness level (0 .. 1)
+  "brightness" : 0.25,           // default; brightness level (0 .. 1)
   "columns" : 6	    			// default; columns of color matrix (1 .. 10)
 }
 ```
