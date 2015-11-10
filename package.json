@@ -1,7 +1,7 @@
 {
   "name": "ep_brightcolorpicker",
   "description": "Replaces the build-in farbtastic color picker with jquery brightcolorpicker",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": {
     "name": "Christoph Becker",
     "email": "christoph.becker@uni-passau.de"
